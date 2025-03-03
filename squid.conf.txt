@@ -1,0 +1,12 @@
+# Listen on port 3128
+http_port 3128
+
+# Allow access from all IPs (for testing purposes)
+http_access allow all
+
+# Logging settings (optional)
+access_log /var/log/squid/access.log
+cache_log /var/log/squid/cache.log
+
+# DNS settings (optional)
+dns_nameservers 8.8.8.8 8.8.4.4

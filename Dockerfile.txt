@@ -1,0 +1,14 @@
+# Use Ubuntu 20.04 as the base image
+FROM ubuntu:20.04
+
+# Install Squid and other necessary packages
+RUN apt-get update && apt-get install -y squid
+
+# Copy the Squid configuration file
+COPY squid.conf /etc/squid/squid.conf
+
+# Expose the Squid proxy port
+EXPOSE 3128
+
+# Start Squid in the foreground
+CMD ["squid", "-N"]
